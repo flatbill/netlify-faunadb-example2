@@ -310,13 +310,13 @@ export default class App extends Component {
 
         <div className='todo-list'>
           <h2>
-            Create a question
+            Work with Questions
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
-              placeholder='Add a todo item'
+              placeholder='Add a question'
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
