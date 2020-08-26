@@ -42,7 +42,7 @@ export default class App extends Component {
     const todoValue = this.inputElement.value
 
     if (!todoValue) {
-      alert('Please add Todo title')
+      alert('Please add a question with words')
       this.inputElement.focus()
       return false
     }
