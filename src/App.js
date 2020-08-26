@@ -310,7 +310,7 @@ export default class App extends Component {
 
         <div className='todo-list'>
           <h2>
-            Create todo
+            Create a question
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
@@ -324,7 +324,7 @@ export default class App extends Component {
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
-                Create todo
+                Create Question
               </button>
               <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
             </div>
