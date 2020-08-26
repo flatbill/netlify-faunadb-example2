@@ -8,7 +8,7 @@ const AppHeader = (props) => {
         <div className='app-title-wrapper'>
           <div className='app-left-nav'>           
             <div className='app-title-text'>
-              <h1 className='app-title'>Netlify + Fauna DB</h1>              
+              <h1 className='app-title'>Questool 2020 drEd5</h1>              
             </div>
           </div>
         </div>
