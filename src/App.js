@@ -358,3 +358,13 @@ function getTodoId(todo) {
   }
   return todo.ref['@ref'].id
 }
+
+readTodo2 = (e) => {
+    const { todos } = this.state
+    const todoId = e.target.dataset.id
+    // Make API request
+    api.readTodo2(todoId).then(() => {
+      console.log(`read todo id ${todoId}`)
+    }).catch((e) => {
+    })
+}
