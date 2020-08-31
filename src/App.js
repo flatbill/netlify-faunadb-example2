@@ -304,6 +304,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
+          <button> wingo </button>
         </div>
       )
     })
