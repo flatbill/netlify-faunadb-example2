@@ -42,11 +42,19 @@ const batchDeleteTodo = (todoIds) => {
     return response.json()
   })
 }
-
+const readTodo2 = (todoId, data) => {
+  return fetch(`/.netlify/functions/readTodo2/${todoId}`, {
+    body: JSON.stringify(data),
+    method: 'POST'
+  }).then(response => {
+    return response.json()
+  })
+}
 export default {
   create: create,
   readAll: readAll,
   update: update,
   delete: deleteTodo,
-  batchDelete: batchDeleteTodo
+  batchDelete: batchDeleteTodo,
+  readTodo2: readTodo2
 }
