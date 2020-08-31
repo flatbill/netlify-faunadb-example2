@@ -59,5 +59,6 @@ export default {
   readAll: readAll,
   update: update,
   delete: deleteTodo,
-  batchDelete: batchDeleteTodo
+  batchDelete: batchDeleteTodo,
+  todosRead2: todosRead2
 }
