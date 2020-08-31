@@ -126,6 +126,11 @@ export default class App extends Component {
       })
     })
     dummy1('bla')
+    api.todosRead2(bla).then(() => {
+      console.log(`running dummy1 todosRead2`)      
+    }).catch((e) => {
+      console.log(`error todosRead2`, e)
+    })
   }
   handleTodoCheckbox = (event) => {
     const { todos } = this.state
@@ -358,8 +363,7 @@ function getTodoId(todo) {
 }
 
 function dummy1(bla) {
- // Make API request to delete todo
-    api.todosRead2(bla).then(() => {
+  api.todosRead2(bla).then(() => {
       console.log(`running dummy1 todosRead2`)      
     }).catch((e) => {
       console.log(`There was an error in dummy1`, e)
