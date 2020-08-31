@@ -44,7 +44,7 @@ const batchDeleteTodo = (todoIds) => {
 }
 
 const todosRead2 = (todoIds) => {
-  return fetch(`/.netlify/functions/todosRead2`, {
+  return fetch(`/.netlify/functions/todosRead2/${todoIds}`, {
     body: JSON.stringify({
       ids: todoIds
     }),
