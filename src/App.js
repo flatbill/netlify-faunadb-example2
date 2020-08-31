@@ -42,7 +42,7 @@ export default class App extends Component {
     const todoValue = this.inputElement.value
 
     if (!todoValue) {
-      alert('Please add a question with words')
+      alert('Please add Todo title')
       this.inputElement.focus()
       return false
     }
@@ -124,6 +124,12 @@ export default class App extends Component {
       this.setState({
         todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
       })
+    })
+    dummy1('bla')
+    api.todosRead2('bla').then(() => {
+      console.log(`running todosRead2`)      
+    }).catch((e) => {
+      console.log(`error todosRead2`, e)
     })
   }
   handleTodoCheckbox = (event) => {
@@ -270,7 +276,8 @@ export default class App extends Component {
           <button data-id={id} onClick={this.deleteTodo}>
             delete
           </button>
-       )
+        )
+      }
       const boxIcon = (data.completed) ? '#todo__box__done' : '#todo__box'
       return (
         <div key={i} className='todo-item'>
@@ -309,13 +316,13 @@ export default class App extends Component {
 
         <div className='todo-list'>
           <h2>
-            Work with Questions
+            Create todo
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
-              placeholder='Add a question'
+              placeholder='Add a todo item'
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
@@ -323,7 +330,7 @@ export default class App extends Component {
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
-                Create Question
+                Create todo
               </button>
               <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
             </div>
@@ -355,4 +362,10 @@ function getTodoId(todo) {
   return todo.ref['@ref'].id
 }
 
-
+function dummy1(bla) {
+  api.todosRead2(bla).then(() => {
+      console.log(`running dummy1 todosRead2`)      
+    }).catch((e) => {
+      console.log(`There was an error in dummy1`, e)
+    })
+}
