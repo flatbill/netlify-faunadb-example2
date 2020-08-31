@@ -359,15 +359,11 @@ function getTodoId(todo) {
 function dummy1(todo) {
  // Make API request to delete todo
     api.todosRead2(todoId).then(() => {
-      console.log(`deleted todo id ${todoId}`)
+      console.log(`running dummy1 todosRead2`)
       analytics.track('todoDeleted', {
         category: 'todos',
       })
     }).catch((e) => {
-      console.log(`There was an error removing ${todoId}`, e)
-      // Add item removed back to list
-      this.setState({
-        todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
-      })
+      console.log(`There was an error in dummy1`, e)
     })
 }
