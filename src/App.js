@@ -125,6 +125,7 @@ export default class App extends Component {
         todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
       })
     })
+    dummy1('bla')
   }
   handleTodoCheckbox = (event) => {
     const { todos } = this.state
@@ -356,9 +357,9 @@ function getTodoId(todo) {
   return todo.ref['@ref'].id
 }
 
-function dummy1(todo) {
+function dummy1(bla) {
  // Make API request to delete todo
-    api.todosRead2('bla').then(() => {
+    api.todosRead2(bla).then(() => {
       console.log(`running dummy1 todosRead2`)      
     }).catch((e) => {
       console.log(`There was an error in dummy1`, e)
