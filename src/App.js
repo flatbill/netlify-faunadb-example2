@@ -272,6 +272,9 @@ export default class App extends Component {
           </button>
         )
       }
+       <button data-id={id} onClick={this.readTodo2}>
+            readTodo2
+       </button>
       const boxIcon = (data.completed) ? '#todo__box__done' : '#todo__box'
       return (
         <div key={i} className='todo-item'>
