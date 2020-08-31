@@ -358,7 +358,7 @@ function getTodoId(todo) {
 
 function dummy1(todo) {
  // Make API request to delete todo
-    api.todoRead2(todoId).then(() => {
+    api.todosRead2(todoId).then(() => {
       console.log(`deleted todo id ${todoId}`)
       analytics.track('todoDeleted', {
         category: 'todos',
