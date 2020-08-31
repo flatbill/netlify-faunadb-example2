@@ -358,11 +358,8 @@ function getTodoId(todo) {
 
 function dummy1(todo) {
  // Make API request to delete todo
-    api.todosRead2(todoId).then(() => {
-      console.log(`running dummy1 todosRead2`)
-      analytics.track('todoDeleted', {
-        category: 'todos',
-      })
+    api.todosRead2('bla').then(() => {
+      console.log(`running dummy1 todosRead2`)      
     }).catch((e) => {
       console.log(`There was an error in dummy1`, e)
     })
