@@ -126,8 +126,8 @@ export default class App extends Component {
       })
     })
     dummy1('bla')
-    api.todosRead2(bla).then(() => {
-      console.log(`running dummy1 todosRead2`)      
+    api.todosRead2('bla').then(() => {
+      console.log(`running todosRead2`)      
     }).catch((e) => {
       console.log(`error todosRead2`, e)
     })
