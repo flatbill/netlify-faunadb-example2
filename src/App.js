@@ -125,7 +125,7 @@ export default class App extends Component {
         todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
       })
     })
-    dummy1('bla')
+   
     api.todosRead2('bla').then(() => {
       console.log(`running todosRead2`)      
     }).catch((e) => {
@@ -362,10 +362,3 @@ function getTodoId(todo) {
   return todo.ref['@ref'].id
 }
 
-function dummy1(bla) {
-  api.todosRead2(bla).then(() => {
-      console.log(`running dummy1 todosRead2`)      
-    }).catch((e) => {
-      console.log(`There was an error in dummy1`, e)
-    })
-}
