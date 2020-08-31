@@ -4,7 +4,7 @@ Example of using [FaunaDB](https://fauna.com/) with [Netlify functions](https://
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText=Expand Table of Contents) -->
 <details>
-<summary>Expand Table of Contents</summary>
+<summary>Expand Table of Contentsss</summary>
 
 - [About this application](#about-this-application)
 - [Setup &amp; Run Locally](#setup--run-locally)
