@@ -355,3 +355,7 @@ function getTodoId(todo) {
   }
   return todo.ref['@ref'].id
 }
+
+function dummy1(todo) {
+
+}
