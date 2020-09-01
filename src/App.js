@@ -298,7 +298,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
-          <button  data-id={id} onClick={this.foo} > wango </button>
+          <button  data-id={id} onClick={this.saveTodo} > wango </button>
         </div>
       )
     })
