@@ -126,11 +126,11 @@ export default class App extends Component {
       })
     })
    
-//    api.todosRead2('bla').then(() => {
-//      console.log(`running todosRead2`)      
-//    }).catch((e) => {
-//     console.log(`error todosRead2`, e)
-//   })
+    api.todosRead2(todoId).then(() => {
+      console.log(`running todosRead2`)      
+    }).catch((e) => {
+     console.log(`error todosRead2`, e)
+   })
     
   }
   handleTodoCheckbox = (event) => {
