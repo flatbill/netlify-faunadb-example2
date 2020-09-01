@@ -241,11 +241,10 @@ export default class App extends Component {
   }
   ////////////////////////////////////////////////////////////////
   wango = (e) => {
-    const { todos } = this.state
     const todoId = e.target.dataset.id
     // Make API request 
-    api.delete(todoId).then(() => {
-      console.log(`deleted todo id ${todoId}`)
+    api.readTodo2(todoId).then(() => {
+      console.log(`read todo id ${todoId}`)
       analytics.track('todoDeleted', {
         category: 'todos',
       })
