@@ -243,14 +243,7 @@ export default class App extends Component {
   wango = (e) => {
     const { todos } = this.state
     const todoId = e.target.dataset.id
-
-
-
-    this.setState({
-      todos: filteredTodos.optimisticState
-    })
-
-    // Make API request to delete todo
+    // Make API request 
     api.delete(todoId).then(() => {
       console.log(`deleted todo id ${todoId}`)
       analytics.track('todoDeleted', {
@@ -258,10 +251,7 @@ export default class App extends Component {
       })
     }).catch((e) => {
       console.log(`There was an error removing ${todoId}`, e)
-      // Add item removed back to list
-      this.setState({
-        todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
-      })
+           
     })
   }
   /////////////////////////////////////////////////////////////////
