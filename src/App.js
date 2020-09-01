@@ -125,7 +125,7 @@ export default class App extends Component {
         todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
       })
     })
-   readTodos = (e) => {
+   readTodo2 = (e) => {
     const { todos } = this.state
     const todoId = e.target.dataset.id
 
