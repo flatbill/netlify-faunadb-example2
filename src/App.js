@@ -244,13 +244,9 @@ export default class App extends Component {
     const todoId = e.target.dataset.id
     // Make API request 
     api.readTodo2(todoId).then(() => {
-      console.log(`read todo id ${todoId}`)
-      analytics.track('todoDeleted', {
-        category: 'todos',
-      })
+      console.log(`read todo id ${todoId}`)     
     }).catch((e) => {
-      console.log(`There was an error removing ${todoId}`, e)
-           
+      console.log(`There was an error reading ${todoId}`, e)
     })
   }
   /////////////////////////////////////////////////////////////////
