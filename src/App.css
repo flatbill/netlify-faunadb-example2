@@ -48,7 +48,7 @@
   position: relative;
   z-index: 2;
   margin-left: 45px;
-  width: 370px;
+  width: 310px;
 }
 .todo-list-title:hover span[contenteditable="false"]:before {
   content: 'click to edit';
