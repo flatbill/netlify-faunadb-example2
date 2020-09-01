@@ -240,25 +240,11 @@ export default class App extends Component {
     })
   }
   ////////////////////////////////////////////////////////////////
-   wango = (e) => {
+  wango = (e) => {
     const { todos } = this.state
     const todoId = e.target.dataset.id
 
-    // Optimistically remove todo from UI
-    const filteredTodos = todos.reduce((acc, current) => {
-      const currentId = getTodoId(current)
-      if (currentId === todoId) {
-        // save item being removed for rollback
-        acc.rollbackTodo = current
-        return acc
-      }
-      // filter deleted todo out of the todos list
-      acc.optimisticState = acc.optimisticState.concat(current)
-      return acc
-    }, {
-      rollbackTodo: {},
-      optimisticState: []
-    })
+
 
     this.setState({
       todos: filteredTodos.optimisticState
