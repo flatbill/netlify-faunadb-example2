@@ -239,16 +239,46 @@ export default class App extends Component {
       category: 'modal'
     })
   }
-  //
+  ////////////////////////////////////////////////////////////////
    wango = (e) => {
-    this.setState({
-      showMenu: false
+    const { todos } = this.state
+    const todoId = e.target.dataset.id
+
+    // Optimistically remove todo from UI
+    const filteredTodos = todos.reduce((acc, current) => {
+      const currentId = getTodoId(current)
+      if (currentId === todoId) {
+        // save item being removed for rollback
+        acc.rollbackTodo = current
+        return acc
+      }
+      // filter deleted todo out of the todos list
+      acc.optimisticState = acc.optimisticState.concat(current)
+      return acc
+    }, {
+      rollbackTodo: {},
+      optimisticState: []
     })
-    analytics.track('modalClosed', {
-      category: 'modal'
+
+    this.setState({
+      todos: filteredTodos.optimisticState
+    })
+
+    // Make API request to delete todo
+    api.delete(todoId).then(() => {
+      console.log(`deleted todo id ${todoId}`)
+      analytics.track('todoDeleted', {
+        category: 'todos',
+      })
+    }).catch((e) => {
+      console.log(`There was an error removing ${todoId}`, e)
+      // Add item removed back to list
+      this.setState({
+        todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
+      })
     })
   }
-  //
+  /////////////////////////////////////////////////////////////////
   openModal = () => {
     this.setState({
       showMenu: true
