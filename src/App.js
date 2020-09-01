@@ -241,6 +241,7 @@ export default class App extends Component {
   }
   ////////////////////////////////////////////////////////////////
   readTodoAndLogIt = (e) => {
+    alert('running readTodoAndLogIt')
     const todoId = e.target.dataset.id
     // Make API request 
     api.readTodo2(todoId).then(() => {
@@ -309,7 +310,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
-          <button  data-id={id} onClick={this.readTodoAndLogIt} > readTodo2 </button>
+          <button  data-id={id} onClick={this.readTodoAndLogIt} > readTodoAndLogIt </button>
         </div>
       )
     })
