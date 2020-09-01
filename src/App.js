@@ -298,7 +298,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
-         
+          <button  data-id={id} onClick=(foo) > wango </button>
         </div>
       )
     })
@@ -357,3 +357,5 @@ function getTodoId(todo) {
   return todo.ref['@ref'].id
 }
 
+
+function foo() {}
