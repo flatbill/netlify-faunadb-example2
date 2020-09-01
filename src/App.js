@@ -125,7 +125,30 @@ export default class App extends Component {
         todos: filteredTodos.optimisticState.concat(filteredTodos.rollbackTodo)
       })
     })
-   
+   readTodos = (e) => {
+    const { todos } = this.state
+    const todoId = e.target.dataset.id
+
+    // Optimistically remove todo from UI
+    const filteredTodos = todos.reduce((acc, current) => {
+      const currentId = getTodoId(current)
+      if (currentId === todoId) {
+        // save item being removed for rollback
+        acc.rollbackTodo = current
+        return acc
+      }
+      // filter deleted todo out of the todos list
+      acc.optimisticState = acc.optimisticState.concat(current)
+      return acc
+    }, {
+      rollbackTodo: {},
+      optimisticState: []
+    })
+
+    this.setState({
+      todos: filteredTodos.optimisticState
+    })
+
     api.todosRead2(todoId).then(() => {
       console.log(`running todosRead2`)      
     }).catch((e) => {
