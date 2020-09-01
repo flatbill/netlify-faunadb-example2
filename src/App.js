@@ -239,6 +239,16 @@ export default class App extends Component {
       category: 'modal'
     })
   }
+  //
+   wango = (e) => {
+    this.setState({
+      showMenu: false
+    })
+    analytics.track('modalClosed', {
+      category: 'modal'
+    })
+  }
+  //
   openModal = () => {
     this.setState({
       showMenu: true
@@ -298,7 +308,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
-          <button  data-id={id} onClick={this.saveTodo} > wango </button>
+          <button  data-id={id} onClick={this.wango} > wango </button>
         </div>
       )
     })
