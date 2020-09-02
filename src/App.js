@@ -326,6 +326,7 @@ export default class App extends Component {
             Add New Question
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
+          // do comments work here?
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
@@ -337,7 +338,7 @@ export default class App extends Component {
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
-                Add New Question
+                Save the Question
               </button>
               <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
             </div>
