@@ -285,9 +285,9 @@ export default class App extends Component {
         )
       }
       
-      {/*     
+         
       const boxIcon = (data.completed) ? '#todo__box__done' : '#todo__box'     
-      */}
+      alert(boxIcon)
       
       return (
         <div key={i} className='todo-item'>
