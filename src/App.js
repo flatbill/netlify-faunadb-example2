@@ -285,25 +285,12 @@ export default class App extends Component {
         )
       }
       
-         
-      const boxIcon = (data.completed) ? '#todo__box__done' : '#todo__box'     
-    
       
       return (
         <div key={i} className='todo-item'>
           <label className="todo">
           
-            <input
-              data-id={id}
-              className="todo__state"
-              type="checkbox"
-              onChange={this.handleTodoCheckbox}
-              checked={data.completed}
-            />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 25" className="todo__icon">
-              <use xlinkHref={`${boxIcon}`} className="todo__box"></use>
-              <use xlinkHref="#todo__check" className="todo__check"></use>
-            </svg>
+         
             
             <div className='todo-list-title'>
               <ContentEditable
