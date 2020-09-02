@@ -288,6 +288,7 @@ export default class App extends Component {
       return (
         <div key={i} className='todo-item'>
           <label className="todo">
+            {/*
             <input
               data-id={id}
               className="todo__state"
@@ -299,6 +300,7 @@ export default class App extends Component {
               <use xlinkHref={`${boxIcon}`} className="todo__box"></use>
               <use xlinkHref="#todo__check" className="todo__check"></use>
             </svg>
+            */}
             <div className='todo-list-title'>
               <ContentEditable
                 tagName='span'
@@ -326,7 +328,7 @@ export default class App extends Component {
             Add New Question
             <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
           </h2>
-          // do comments work here?
+          
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
