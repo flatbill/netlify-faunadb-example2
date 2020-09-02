@@ -126,37 +126,7 @@ export default class App extends Component {
       })
     })
   }
-  handleTodoCheckbox = (event) => {
-    const { todos } = this.state
-    const { target } = event
-    const todoCompleted = target.checked
-    const todoId = target.dataset.id
-
-    const updatedTodos = todos.map((todo, i) => {
-      const { data } = todo
-      const id = getTodoId(todo)
-      if (id === todoId && data.completed !== todoCompleted) {
-        data.completed = todoCompleted
-      }
-      return todo
-    })
-
-    this.setState({
-      todos: updatedTodos
-    }, () => {
-      api.update(todoId, {
-        completed: todoCompleted
-      }).then(() => {
-        console.log(`update todo ${todoId}`, todoCompleted)
-        const eventName = (todoCompleted) ? 'todoCompleted' : 'todoUnfinished'
-        analytics.track(eventName, {
-          category: 'todos'
-        })
-      }).catch((e) => {
-        console.log('An API error occurred', e)
-      })
-    })
-  }
+  
   updateTodoTitle = (event, currentValue) => {
     let isDifferent = false
     const todoId = event.target.dataset.key
