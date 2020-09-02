@@ -42,7 +42,7 @@ export default class App extends Component {
     const todoValue = this.inputElement.value
 
     if (!todoValue) {
-      alert('Please add Todo title')
+      alert('Please add question text')
       this.inputElement.focus()
       return false
     }
@@ -329,7 +329,7 @@ export default class App extends Component {
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
-              placeholder='Add New Question'
+              placeholder='enter question text here'
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
