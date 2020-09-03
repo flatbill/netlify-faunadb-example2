@@ -273,7 +273,7 @@ export default class App extends Component {
             </div>
           </label>
           {deleteButton}
-          <button  data-id={id} onClick={this.readTodoAndLogIt} > readTodoAndLogIt </button>
+          <button  data-id={id} onClick={this.readTodoAndLogIt} > readTest </button>
         </div>
       )
     })
