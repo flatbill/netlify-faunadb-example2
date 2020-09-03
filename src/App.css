@@ -47,7 +47,7 @@
   flex-grow: 1;
   position: relative;
   z-index: 2;
-  margin-left: 45px;
+  margin-left: 5px;
   width: 300px;
 }
 .todo-list-title:hover span[contenteditable="false"]:before {
