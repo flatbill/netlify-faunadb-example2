@@ -18,7 +18,7 @@ const readAll = () => {
 const update = (todoId, data) => {
   return fetch(`/.netlify/functions/todos-update/${todoId}`, {
     body: JSON.stringify(data),
-    //method: 'POST'
+    method: 'POST'
   }).then(response => {
     return response.json()
   })
@@ -45,7 +45,7 @@ const batchDeleteTodo = (todoIds) => {
 const readTodo2 = (todoId, data) => {
   return fetch(`/.netlify/functions/readTodo2/${todoId}`, {
     body: JSON.stringify(data),
-    method: 'POST'
+    //method: 'POST'
   }).then(response => {
     return response.json()
   })
