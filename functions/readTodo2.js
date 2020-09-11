@@ -1,7 +1,7 @@
 /* Import faunaDB sdk */
 const faunadb = require('faunadb')
 const getId = require('./utils/getId')
-const getId2 = require('./utils/getId2')
+const getId2 = require('./utils/getId2') // test that I can create util funcs and include them here.
 const q = faunadb.query
 
 exports.handler = (event, context) => {
@@ -9,9 +9,9 @@ exports.handler = (event, context) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNADB_SERVER_SECRET
   }) 
-  const id = getId(event.path) // likely relies on html that has fauna rec id already baked into the path.
-  console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`) // dave likes template literals.  inside `me`.
-  console.log('Function readTodo2 invoked, mr space cadeter. Read id:' + id) // works.  avoids template literal.
+  const id = getId(event.path) // likely relies on html that has fauna rec id already baked into the path. maybe shadow dom.
+  //console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`) // dave likes template literals. inside `me`.
+  console.log('Function readTodo2 invoked. Read id:' + id) // works.  avoids template literal.
   // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
