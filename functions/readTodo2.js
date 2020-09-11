@@ -14,10 +14,10 @@ exports.handler = (event, context) => {
   // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
-  let myCollection = 'classes/killMe/'
-  let myId =  '276373561266930176'
-  let myFetchRef = myCollection + myId
-  return client.query(q.Get(q.Ref(myFetchRef)))
+  let myFaunaCollection = 'killMe'
+  let myFaunaId =  '276373561266930176'
+  let myFaunaFetchRef = 'classes/' + myFaunaCollection + '/'+ myFaunaId
+  return client.query(q.Get(q.Ref(myFaunaFetchRef)))
     .then((response) => {
       console.log('success', response)
       return {
