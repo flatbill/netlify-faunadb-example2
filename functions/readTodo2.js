@@ -7,7 +7,7 @@ const q = faunadb.query
 exports.handler = (event, context) => {
   /* configure faunaDB Client with our secret */
   const client = new faunadb.Client({
-    secret: process.env.FAUNADB_SERVER_SECRET
+    secret: process.env.FAUNADB_SERVER_SECRET2
   }) 
   const id = getId(event.path) // likely relies on html that has fauna rec id already baked into the path. maybe shadow dom.
   //console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`) // dave likes template literals. inside `me`.
