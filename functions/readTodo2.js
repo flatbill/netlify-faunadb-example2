@@ -13,8 +13,11 @@ exports.handler = (event, context) => {
   console.log('Function readTodo2 invoked, mr space cadeter. Read id:' + id)
   // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
-  //let zoomboom =  '276373561266930176'
-  return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
+  // return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
+  let myCollection = 'classes/killMe/'
+  let myId =  '276373561266930176'
+  let myFetchRef = myCollection + myId
+  return client.query(q.Get(q.Ref(myFetchRef)))
     .then((response) => {
       console.log('success', response)
       return {
