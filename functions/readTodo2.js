@@ -12,7 +12,9 @@ exports.handler = (event, context) => {
   console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`)
   console.log('Function readTodo2 invoked, mr space cadeter. Read id:' + id)
   // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
-  return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
+  // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
+  //let zoomboom =  '276373561266930176'
+  return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
     .then((response) => {
       console.log('success', response)
       return {
