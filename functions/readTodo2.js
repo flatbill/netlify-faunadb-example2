@@ -11,7 +11,8 @@ exports.handler = (event, context) => {
   const id = getId(event.path)
   console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`)
   console.log('Function readTodo2 invoked, mr space cadeter. Read id:' + id)
-  return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
+  // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
+  return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
     .then((response) => {
       console.log('success', response)
       return {
