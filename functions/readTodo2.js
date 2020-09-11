@@ -16,8 +16,9 @@ exports.handler = (event, context) => {
   // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
   // let myFaunaCollection = 'killMe'
+   // let myFaunaId =  '276373561266930176'
   let myFaunaCollection = 'qtQuestions'
-  let myFaunaId =  '276373561266930176'
+  let myFaunaId =  '276380634185728512'
   let myFaunaFetchRef = 'classes/' + myFaunaCollection + '/'+ myFaunaId
   return client.query(q.Get(q.Ref(myFaunaFetchRef)))
     .then((response) => {
