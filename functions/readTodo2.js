@@ -13,21 +13,24 @@ exports.handler = (event, context) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNADB_SERVER_SECRET2
   }) 
-  const id = getId(event.path) // likely relies on html that has fauna rec id already baked into the path. maybe shadow dom.
+  const id = getId(event.path) // relies on html that has fauna rec id already baked into the path. see html data-attr.
   const id666 = getId2(event.path) // test function call, dont use this.
   //console.log(`Function 'readTodo2' invoked, mr space cadet. Read id: ${id}`) // dave likes template literals. inside `me`.
-  console.log('Function readTodo2 invoked. Read id:' + id) // works.  avoids template literal.
+  // console.log('Function readTodo2 invoked. Read id:' + id) // works.  avoids template literal.
   // return client.query(q.Get(q.Ref(`classes/todos/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/${id}`)))
   // return client.query(q.Get(q.Ref(`classes/killMe/276373561266930176`)))
   //
   // let myFaunaDbName = 'alaska6'  // not needed cuz FAUNADB_SERVER_SECRET2 is tied to database alaska6.
   // let myFaunaCollection = 'killMe' //works
-  // let myFaunaId =  '276373561266930176' // works if you have the correct database+collection
+  // let myFaunaRecId =  '276373561266930176' // works if you have the correct database+collection
  
   // let myFaunaCollection = 'qtQuestions'
-  let myFaunaId =  '276380634185728512'
-  let myFaunaFetchRef = 'classes/' + myFaunaCollection + '/'+ myFaunaId
+  let myFaunaRecId =  '276380634185728512'
+  let myFaunaFetchRef = 'classes/' + myFaunaCollection + '/'+ myFaunaRecId 
+  console.log('Function readTodo2 myFaunaFetchRef : ' + myFaunaFetchRef) 
+  console.log('Function readTodo2 myFaunaRecId: ' + myFaunaRecId) 
+
   
   return client.query(q.Get(q.Ref(myFaunaFetchRef)))
     .then((response) => {
